@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Builder</title>
+  <style>
+ body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.logo-wrapper {
+  flex: 0 0 auto; /* Don't grow, don't shrink, stay at initial size */
+  margin-right: 20px; /* Add some space between the logo and header content */
+}
+
+.logo {
+  width: 100px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.header-content {
+  flex: 1; /* Take up remaining space */
+}
+
+header h1 {
+  margin: 0;
+}
+
+header nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  padding: 20px;
+}
+
+.hero {
+  background-color: #ffffff; /* Black background color */
+  padding: 40px;
+  text-align: center;
+}
+
+.hero-content {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center the flex items horizontally */
+  align-items: center; /* Center the flex items vertically */
+}
+
+.text {
+  width: 50%; /* Text takes up 50% of the section */
+  padding: 20px;
+  color: #000000; /* White text color */
+}
+
+.image {
+  width: 50%; /* Image takes up 50% of the section */
+}
+
+.image img {
+  max-width: 100%; /* Ensure image does not exceed its container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #ffffff; /* White text color for buttons */
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #555;
+}
+
+.features {
+  margin-top: 40px;
+}
+
+.feature {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+  </style>
+</head>
+<body>
+    <header>
+        <div class="logo-wrapper">
+          <img src="file:///C:/Users/Students%20Xerox%20Arni/OneDrive/Desktop/logo.png" class="logo">
+        </div>
+        <div class="header-content">
+          <h1>Digital Nest</h1>
+          <nav>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Features</a></li>
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      
+
+  <main>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="image">
+            <img src="https://i.ibb.co/fGNFbF5/Untitled.png">
+            </div>
+          <div class="text">
+            <h2>Create Your Website Today</h2>
+            <p>Build a stunning website with our easy-to-use platform. No coding required!</p>
+            <a href="#" class="btn">Get Started</a>
+        </div>
+          
+        </div>
+    </section>
+      
+
+    <section class="features">
+      <h2>Features</h2>
+      <div class="feature">
+        <h3>Responsive Design</h3>
+        <p>Create websites that look great on any device.</p>
+      </div>
+      <div class="feature">
+        <h3>Drag and Drop Editor</h3>
+        <p>Simply drag and drop elements to build your site.</p>
+      </div>
+      <div class="feature">
+        <h3>Customization Options</h3>
+        <p>Choose from various templates and customize to your liking.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Website Builder</p>
+  </footer>
+</body>
+</html>
