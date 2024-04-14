@@ -1,159 +1,227 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Website Builder</title>
   <style>
- body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .templates {
+      padding: 20px;
+      overflow: hidden; /* Hide overflowing content */
+      position: relative; /* Position for pause button */
+    }
 
-header {
-  background-color: #333;
-  color: white;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-}
+    .template-images {
+      display: flex;
+      gap: 20px; /* Proper spacing between templates */
+      white-space: nowrap; /* Keep images in a single line */
+      animation: marquee 20s linear infinite; /* Animation for the marquee effect */
+      
+    }
 
-.logo-wrapper {
-  flex: 0 0 auto; /* Don't grow, don't shrink, stay at initial size */
-  margin-right: 20px; /* Add some space between the logo and header content */
-}
+    .template {
+      flex: 0 0 auto; /* Prevent images from resizing */
+      scroll-snap-align: start; /* Snap each image to start */
+      padding-right: 20;
+    }
 
-.logo {
-  width: 100px; /* Adjust the width as needed */
-  height: auto; /* Maintain aspect ratio */
-}
+    .template img {
+      max-width: 500px; /* Adjust as needed */
+      height: auto;
+    }
 
-.header-content {
-  flex: 1; /* Take up remaining space */
-}
+    .pause {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 24px;
+      color: #333;
+    }
 
-header h1 {
-  margin: 0;
-}
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%); /* Start position of images */
+      }
+      100% {
+        transform: translateX(-100%); /* End position of images */
+      }
+    
+    }
 
-header nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+    }
 
-header nav ul li {
-  display: inline;
-  margin-right: 20px;
-}
+    .logo-wrapper {
+      flex: 0 0 auto;
+      margin-right: 20px;
+    }
 
-header nav ul li a {
-  color: white;
-  text-decoration: none;
-}
+    .logo {
+      width: 200px;
+      height: auto;
+    }
 
-main {
-  padding: 20px;
-}
+    .header-content {
+      flex: 1;
+    }
 
-.hero {
-  background-color: #ffffff; /* Black background color */
-  padding: 40px;
-  text-align: center;
-}
+    header h1 {
+      margin: 0;
+    }
 
-.hero-content {
-  display: flex; /* Use flexbox for layout */
-  justify-content: center; /* Center the flex items horizontally */
-  align-items: center; /* Center the flex items vertically */
-}
+    header nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
 
-.text {
-  width: 50%; /* Text takes up 50% of the section */
-  padding: 20px;
-  color: #000000; /* White text color */
-}
+    header nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
 
-.image {
-  width: 50%; /* Image takes up 50% of the section */
-}
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
 
-.image img {
-  max-width: 100%; /* Ensure image does not exceed its container */
-  height: auto; /* Maintain aspect ratio */
-}
+    main {
+      padding: 20px;
+    }
 
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #333;
-  color: #ffffff; /* White text color for buttons */
-  text-decoration: none;
-  border-radius: 5px;
-}
+    .hero {
+      background-color: #ffffff;
+      padding: 40px;
+      text-align: center;
+    }
 
-.btn:hover {
-  background-color: #555;
-}
+    .hero-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-.features {
-  margin-top: 40px;
-}
+    .text {
+      width: 50%;
+      padding: 20px;
+      color: #000000;
+    }
 
-.feature {
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-}
+    .image {
+      width: 50%;
+    }
 
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 10px;
-}
+    .image img {
+      max-width: 100%;
+      height: auto;
+    }
 
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .btn:hover {
+      background-color: #555;
+    }
+
+    .features {
+      margin-top: 40px;
+    }
+
+    .feature {
+      border: 1px solid #000000;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+    .go-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: none; /* Hidden by default */
+    }
+
+    .go-to-top:hover {
+      background-color: #555;
+    }
   </style>
 </head>
 <body>
-    <header>
-        <div class="logo-wrapper">
-          <img src="file:///C:/Users/Students%20Xerox%20Arni/OneDrive/Desktop/logo.png" class="logo">
-        </div>
-        <div class="header-content">
-          <h1>Digital Nest</h1>
-          <nav>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Features</a></li>
-              <li><a href="#">Pricing</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-      
+  <header>
+    <div class="logo-wrapper">
+      <img src="file:///C:/Users/Students%20Xerox%20Arni/OneDrive/Desktop/Untitled.png" class="logo">
+    </div>
+    <div class="header-content">
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#templates">Templates</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <main>
     <section class="hero">
-        <div class="hero-content">
-            <div class="image">
-            <img src="https://i.ibb.co/fGNFbF5/Untitled.png">
-            </div>
-          <div class="text">
-            <h2>Create Your Website Today</h2>
-            <p>Build a stunning website with our easy-to-use platform. No coding required!</p>
-            <a href="#" class="btn">Get Started</a>
+      <div class="hero-content">
+        <div class="image">
+          <img src="https://i.ibb.co/fGNFbF5/Untitled.png">
         </div>
-          
+        <div class="text">
+          <h2>Create Your Website Today</h2>
+          <p>Build a stunning website with our easy-to-use platform. No coding required!</p>
+          <a href="#" class="btn">Get Started</a>
         </div>
+      </div>
+    
     </section>
-      
+    <section class="templates" id="templates">
+      <h2>Templates</h2>
+      <div class="template-images">
+        <div class="template">
+          <img src="https://i.ibb.co/d7MtkNS/TEMPLATE1.png" alt="TEMPLATE1">
+        </div>
+      </br>
+        <div class="template">
+        <img src="https://i.ibb.co/yFyGrc4/TEMPLATE2.png" alt="TEMPLATE2">
+      </div>
+    </br>
+      <div class="template">
+        <img src="https://i.ibb.co/G2wCnNt/TEMPLATE3.png" alt="TEMPLATE3">
+      </div>
+        <!-- Add more template images as needed -->
+      </div>
+    </section>
 
-    <section class="features">
+    <section class="features" id="features">
       <h2>Features</h2>
       <div class="feature">
         <h3>Responsive Design</h3>
@@ -167,11 +235,102 @@ footer {
         <h3>Customization Options</h3>
         <p>Choose from various templates and customize to your liking.</p>
       </div>
+      <div class="pause" onclick="toggleMarquee()">⏸</div>
+      <div class="go-to-top" onclick="goToTop()">Go to Top</div>
     </section>
+    
   </main>
 
   <footer>
     <p>&copy; 2024 Website Builder</p>
   </footer>
+
+  <script>
+    function smoothScroll(target, duration) {
+      var targetElement = document.querySelector(target);
+      var targetPosition = targetElement.getBoundingClientRect().top;
+      var startPosition = window.pageYOffset;
+      var distance = targetPosition - startPosition;
+      var startTime = null;
+
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        var timeElapsed = currentTime - startTime;
+        var run = ease(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+      }
+
+      function ease(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+      }
+
+      requestAnimationFrame(animation);
+    }
+    function goToTop() {
+      smoothScroll('body', 1000);
+    }
+
+    var featuresLink = document.querySelector('a[href="#features"]');
+    featuresLink.addEventListener('click', function (event) {
+      event.preventDefault();
+      smoothScroll('#features', 1000);
+
+    
+    });
+    var templateImages = document.querySelector('.template-images');
+    var isPaused = false;
+
+    function toggleMarquee() {
+      isPaused = !isPaused;
+      if (isPaused) {
+        templateImages.style.animationPlayState = 'paused';
+      } else {
+        templateImages.style.animationPlayState = 'running';
+      }
+    }
+
+    function smoothScroll(target, duration) {
+      var targetElement = document.querySelector(target);
+      var targetPosition = targetElement.getBoundingClientRect().top;
+      var startPosition = window.pageYOffset;
+      var distance = targetPosition - startPosition;
+      var startTime = null;
+
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        var timeElapsed = currentTime - startTime;
+        var run = ease(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+      }
+
+      function ease(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+      }
+
+      requestAnimationFrame(animation);
+    }
+
+    var templatesLink = document.querySelector('a[href="#templates"]');
+    templatesLink.addEventListener('click', function (event) {
+      event.preventDefault();
+      smoothScroll('#templates', 1000);
+    });
+    window.onscroll = function() {
+      var goTopButton = document.querySelector('.go-to-top');
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        goTopButton.style.display = 'block';
+      } else {
+        goTopButton.style.display = 'none';
+      }
+    };
+  </script>
 </body>
 </html>
