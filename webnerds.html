@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Website Builder</title>
+  <style>
+     body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+
+    .templates {
+      padding: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .template-images {
+      display: flex;
+      gap: 20px;
+      white-space: nowrap;
+      animation: marquee 60s linear infinite;
+    }
+
+    .template {
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      padding-right: 20px;
+    }
+
+    .template img {
+      max-width: 500px;
+      height: auto;
+    }
+
+    .pause {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 24px;
+      color: #333;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    .template-images:hover {
+      animation-play-state: paused;
+    }
+
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-wrapper {
+      flex: 0 0 auto;
+      margin-right: 20px;
+    }
+
+    .logo {
+      width: 200px;
+      height: auto;
+    }
+
+    .header-content {
+      flex: 1;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    header nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    header nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .hero {
+      background-color: #f2f2f2;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .hero-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .text {
+      width: 50%;
+      padding: 20px;
+      color: #000000;
+    }
+
+    .image {
+      width: 50%;
+    }
+
+    .image img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .btn:hover {
+      background-color: #555;
+    }
+
+    .features {
+      margin-top: 40px;
+    }
+
+    .feature {
+      border: 1px solid #000000;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .go-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: none;
+    }
+
+    .go-to-top:hover {
+      background-color: #555;
+    }
+    .template-images {
+  display: flex;
+  gap: 20px; /* Proper spacing between templates */
+  white-space: nowrap; /* Keep images in a single line */
+  animation: marquee 60s ease-in-out infinite; /* Slow and smooth animation */
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-wrapper">
+      <img src="https://i.ibb.co/Z2rMLyw/Untitled.png" class="logo">
+    </div>
+    <div class="header-content">
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#templates">Templates</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="image">
+          <img src="https://i.ibb.co/fGNFbF5/Untitled.png">
+        </div>
+        <div class="text">
+          <h2>Create Your Website Today</h2>
+          <p>Build a stunning website with our easy-to-use platform. No coding required!</p>
+          <a href="https://www.wix.com/lp-en/website-builder?utm_source=google&utm_medium=cpc&utm_campaign=20775532252^155437474453^search%20-%20en&experiment_id=best%20website%20builder^e^695312469355^&gad_source=1&gclid=CjwKCAjw26KxBhBDEiwAu6KXt4Ej8bKPd7buBiRqfXw-PpRZ_Zf9MU5Bv0BW5QzpFhSywvGr3LwyZxoCuCkQAvD_BwE" class="btn">Get Started</a>
+        </div>
+      </div>
+    </section>
+    <section class="templates" id="templates">
+        <h2>Templates</h2>
+        <div class="template-images">
+          <div class="template">
+            <a href="path_to_html_page1.html">
+              <img src="file:///C:/Users/HP/OneDrive/Desktop/PROJECTS/1.png" alt="TEMPLATE1">
+            </a>
+          </div>
+          <div class="template">
+            <a href="path_to_html_page2.html">
+              <img src="file:///C:/Users/HP/OneDrive/Desktop/PROJECTS/2.png" alt="TEMPLATE2">
+            </a>
+          </div>
+          <div class="template">
+            <a href="path_to_html_page3.html">
+              <img src="file:///C:/Users/HP/OneDrive/Desktop/PROJECTS/3.png" alt="TEMPLATE3">
+            </a>
+          </div>
+        </div>
+      </section>
+      
+
+    <section class="features" id="features">
+      <h2>Features</h2>
+      <div class="feature">
+        <h3>Responsive Design</h3>
+        <p>Create websites that look great on any device.</p>
+      </div>
+      <div class="feature">
+        <h3>Drag and Drop Editor</h3>
+        <p>Simply drag and drop elements to build your site.</p>
+      </div>
+      <div class="feature">
+        <h3>Customization Options</h3>
+        <p>Choose from various templates and customize to your liking.</p>
+      </div>
+      <div class="pause" onclick="toggleMarquee()">⏸</div>
+      <div class="go-to-top" onclick="goToTop()">Go to Top</div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Website Builder</p>
+  </footer>
+
+  <script>
+   var templateImages = document.querySelector('.template-images');
+    var isPaused = false;
+    var pauseButton = document.querySelector('.pause');
+
+    function toggleMarquee() {
+      isPaused = !isPaused;
+      if (isPaused) {
+        templateImages.style.animationPlayState = 'paused';
+        pauseButton.textContent = '▶️'; // Change to play icon
+      } else {
+        templateImages.style.animationPlayState = 'running';
+        pauseButton.textContent = '⏸'; // Change to pause icon
+      }
+    }
+
+    function smoothScroll(target, duration) {
+      var targetElement = document.querySelector(target);
+      var targetPosition = targetElement.getBoundingClientRect().top;
+      var startPosition = window.pageYOffset;
+      var distance = targetPosition - startPosition;
+      var startTime = null;
+
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        var timeElapsed = currentTime - startTime;
+        var run = ease(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+      }
+
+      function ease(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+      }
+
+      requestAnimationFrame(animation);
+    }
+
+    function goToTop() {
+      smoothScroll('body', 1000);
+    }
+
+    var featuresLink = document.querySelector('a[href="#features"]');
+    featuresLink.addEventListener('click', function (event) {
+      event.preventDefault();
+      smoothScroll('#features', 1000);
+    });
+
+    var templatesLink = document.querySelector('a[href="#templates"]');
+    templatesLink.addEventListener('click', function (event) {
+      event.preventDefault();
+      smoothScroll('#templates', 1000);
+    });
+
+    window.onscroll = function() {
+      var goTopButton = document.querySelector('.go-to-top');
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        goTopButton.style.display = 'block';
+      } else {
+        goTopButton.style.display = 'none';
+      }
+    };
+  </script>
+</body>
+</html>
